@@ -145,11 +145,82 @@ section {
       gap: 20px;
       a {
         &::after {
-          content: url('../images/arrow.svg');
+          content: url("../images/arrow.svg");
           transform: rotate(90deg);
-          margin-left: 10px; 
+          margin-left: 10px;
         }
       }
     }
   }
 }
+
+// process section
+
+section {
+  &.process {
+    text-align: center;
+    padding: 6rem 0;
+    .container {
+      margin: auto;
+      h2 {
+        font-family: "Poppins", sans-serif;
+        font-size: 40px;
+        color: #413838;
+        font-weight: 700;
+        padding-bottom: 80px;
+      }
+      .cards {
+        padding-top: 10px;
+        display: flex;
+        margin: 0 50px;
+        flex-wrap: wrap;
+        gap:15px;
+        .card {
+          flex: 1;
+          padding: 50px 17px;
+          text-align: center;
+          min-height: 317px;
+          border-radius: 0 50px 50px 50px;
+          margin: 0px 15px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          gap: 20px;
+
+          &:first-child {
+            background-color: #ffeded;
+          }
+          &:nth-child(2) {
+            background-color: #f9e1ee;
+          }
+          &:nth-child(3) {
+            background-color: #c2e8ff;
+          }
+          &:nth-child(4) {
+            background-color: #bbfff4;
+          }
+          &:last-child {
+            background-color: #e7e6ff;
+          }
+          img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+          }
+
+          p {
+            color: #332d2d;
+            font-weight: 600;
+            font-family: "Poppins";
+            font-size: 16px;
+            line-height: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// Why choose us section
