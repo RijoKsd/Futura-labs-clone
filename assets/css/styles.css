@@ -86,10 +86,72 @@ header .container .logo {
 header .container .logo img {
   width: 170px;
 }
+header .container .ham-menu {
+  display: none;
+  height: 50px;
+  width: 50px;
+  margin-left: auto;
+  position: relative;
+  cursor: pointer;
+}
+header .container .ham-menu span {
+  height: 5px;
+  width: 100%;
+  background-color: #332d2d;
+  border-radius: 25px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  margin-left: -15px;
+  transition: all 0.5s;
+}
+header .container .ham-menu span:nth-child(1) {
+  top: 25%;
+}
+header .container .ham-menu span:nth-child(2) {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+header .container .ham-menu span:nth-child(3) {
+  top: 75%;
+}
+header .container .ham-menu.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+header .container .ham-menu.active span:nth-child(2) {
+  display: none;
+}
+header .container .ham-menu.active span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
 header .container nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+header .container nav ul#all-menus.active {
+  display: block;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: transparent;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  z-index: 99;
+}
+header .container nav ul#all-menus.active li {
+  margin: 10px;
+  padding: 5px 20px;
+}
+header .container nav ul#all-menus.active li a {
+  color: #000000;
 }
 header .container nav ul li {
   margin: 0 20px;
@@ -156,13 +218,11 @@ section.process .container h2 {
 }
 section.process .container .cards {
   padding-top: 10px;
-  display: flex;
-  margin: 0 50px;
-  flex-wrap: wrap;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 section.process .container .cards .card {
-  flex: 1;
   padding: 50px 17px;
   text-align: center;
   min-height: 317px;
@@ -218,13 +278,10 @@ section.why-choose .container h2 {
   padding-bottom: 80px;
 }
 section.why-choose .container .cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
   margin: 20px;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 section.why-choose .container .cards .card {
   padding: 45px 30px 18px;
@@ -234,7 +291,6 @@ section.why-choose .container .cards .card {
   border: 3px solid transparent;
   transition: all 0.5s;
   min-height: 540px;
-  width: 20%;
 }
 section.why-choose .container .cards .card:hover {
   border: 3px solid #d18888;
@@ -266,12 +322,14 @@ section.highlight .container h2 {
   font-weight: 700;
 }
 section.highlight .container .cards {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
   background: #d1e1f8;
   padding: 68px 0 50px;
   border-radius: 25px;
+  margin: 0 15px;
 }
 section.highlight .container .cards .card img {
   padding-bottom: 25px;
@@ -296,10 +354,48 @@ footer {
 }
 
 @media (max-width: 1200px) {
-  header nav ul li {
+  .container {
+    max-width: 960px;
+  }
+  header .container nav ul li {
     margin: 0 10px;
   }
-  header nav ul li a {
-    color: red;
+  section.banner .container {
+    text-align: center;
+  }
+  section.banner .container h1 {
+    line-height: 100px;
+  }
+  section.process .container {
+    text-align: center;
+  }
+  section.process .container .cards {
+    margin: 0 10px;
+  }
+  section.process .container .cards .card {
+    padding: 50px 10px;
+  }
+}
+@media (max-width: 992px) {
+  header .container .ham-menu {
+    display: block;
+  }
+  header .container nav ul {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  section.banner .container h1 {
+    font-size: 30px;
+    padding-bottom: 5px;
+  }
+  section.banner .container p {
+    padding-bottom: 20px;
+    margin: 0 20px;
+  }
+  section.highlight .container h2 {
+    font-size: 2rem;
+    padding: 40px;
+    line-height: 42px;
   }
 }/*# sourceMappingURL=styles.css.map */

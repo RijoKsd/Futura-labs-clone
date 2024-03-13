@@ -22,8 +22,13 @@
                     <img src="./assets/images/futura-labs.svg" alt="logo image">
                 </a>
             </div>
-            <nav>
-                <ul>
+            <div class="ham-menu ">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav >
+                <ul id="all-menus">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Internship</a></li>
@@ -37,7 +42,6 @@
                                     d="M13.7071 8.20711C14.0976 7.81658 14.0976 7.18342 13.7071 6.79289L7.34315 0.428932C6.95262 0.0384078 6.31946 0.0384078 5.92893 0.428932C5.53841 0.819457 5.53841 1.45262 5.92893 1.84315L11.5858 7.5L5.92893 13.1569C5.53841 13.5474 5.53841 14.1805 5.92893 14.5711C6.31946 14.9616 6.95262 14.9616 7.34315 14.5711L13.7071 8.20711ZM0 8.5H13V6.5L0 6.5L0 8.5Z"
                                     fill="#fff" />
                             </svg>
-
                         </a></li>
                 </ul>
             </nav>
@@ -221,6 +225,20 @@
     <footer>
         Made with ❤️ by <a href=""> Rijo Sebastian</a>
     </footer>
+
+
+    <!-- javscript -->
+
+    <script>
+
+        const hamMenu = document.querySelector(".ham-menu");
+        const navEl = document.querySelector("#all-menus");
+        hamMenu.addEventListener("click",()=>{
+            hamMenu.classList.toggle("active");
+            navEl.classList.toggle("active");
+ 
+        })
+    </script>
 
 </body>
 
